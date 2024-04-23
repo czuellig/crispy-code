@@ -1,0 +1,16 @@
+body {
+    margin: 0 auto;
+    background-color: black;
+    width: 80%;
+    color: white;
+    text-align: center;
+}
+
+footer {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 80%;
+}
