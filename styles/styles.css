@@ -7,12 +7,14 @@ body {
 }
 
 *{
-    font-family: logic-monoscript, mono;
-    font-style: normal;
+    font-family: logic-monospace, mono;
 }
 
 h1 {
     font-size: 2em;
+    font-style: bold, normal;
+    text-align: left;
+    line-height: 80%
 }
 
 h2 {
@@ -26,4 +28,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 80%;
+    position: relative;
+    margin-top: 80px;
 }
