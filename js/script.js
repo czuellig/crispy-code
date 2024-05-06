@@ -2,6 +2,43 @@
 
 let url = "https://picsum.photos/v2/list?limit=100";
 
+// Helper functions
+function replaceSize(string, width = 1000, height = 500) {
+    const regex = /(?<=\/\d*\/)\d*\/\d*/g;
+    return string.replace(regex, `${width}/${height}`);
+}
+
+function reloadImage(newWidth, newHeight) {
+    let imageURL = document.querySelector("#image").src;
+    imageURL = replaceSize(imageURL, newWidth, newHeight);
+    document.querySelector("#image").src = imageURL;
+}
+
+function checkSize(width, height) {
+    if (width < 100) {
+        width = 100;
+    }
+
+    if (width > 1200){
+        width = 1200;
+    }
+
+    if (height < 100) {
+        height = 100;
+    }
+
+    if (height > 800) {
+        height = 800;
+    }
+
+    return [width, height];
+}
+
+
+
+
+
+// Fetch images from the API
 async function loadImages() {
     try {
         const response = await fetch(url);
@@ -11,7 +48,7 @@ async function loadImages() {
         return false;
     }
 }
-async function init(width = 1000, height = 500) {
+async function init() {
     const imageList = await loadImages();
 
     let id = sessionStorage.getItem("id");
@@ -22,21 +59,11 @@ async function init(width = 1000, height = 500) {
     }
     let imageUrl = imageList[id].download_url;
     //regex that matches "3840/2160" in ""https://picsum.photos/id/104/3840/2160"
-    const regex = /\d{3,4}\/\d{3,4}/; // TODO:
+    imageUrl = replaceSize(imageUrl);
 // if radio button is checked, add ?grayscale to the url
-    imageUrl = imageUrl.replace(regex, `${width}//${height}`);
     console.log(imageUrl);
     document.querySelector("#image").src = imageUrl;
-
-    document.querySelector("#grayscale").addEventListener("click", function() {
-        if (document.querySelector("#grayscale").checked) {
-            imageUrl = imageUrl + "?grayscale";
-        }
-    });
-    console.log(imageUrl);
-    
 }
-
 
 
 
@@ -55,18 +82,37 @@ let imageHeight =document.querySelector("#height").value;
 document.querySelector("#refresh").addEventListener("click", function() {
     sessionStorage.clear();
     init();
+    document.querySelector("#grayscale").checked = false;
 });
 
 document.querySelector("#width").addEventListener("input", function() {
+    console.log("input");
     let newWidth = document.querySelector("#width").value;
     let newHeight = document.querySelector("#height").value;
-    init(newWidth, newHeight);
+    newWidth = checkSize(newWidth, newHeight)[0];
+    newHeight = checkSize(newWidth, newHeight)[1];
+    reloadImage(newWidth, newHeight);
 });
 
 document.querySelector("#height").addEventListener("input", function() {
     let newWidth = document.querySelector("#width").value;
     let newHeight = document.querySelector("#height").value;
-    init(newWidth, newHeight);
+    newWidth = checkSize(newWidth, newHeight)[0];
+    newHeight = checkSize(newWidth, newHeight)[1];
+    reloadImage(newWidth, newHeight);
+    
+    
 });
 
-console.log(imageUrl);
+
+document.querySelector("#grayscale").addEventListener("click", function() {
+    let imageURL = document.querySelector("#image").src;
+    if (document.querySelector("#grayscale").checked) {
+        imageURL = imageURL + "?grayscale";
+        document.querySelector("#image").src = imageURL;      
+    }
+    else {
+        imageURL = imageURL.replace("?grayscale", "");
+        document.querySelector("#image").src = imageURL;
+    }
+});
