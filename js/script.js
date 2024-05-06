@@ -11,7 +11,7 @@ async function loadImages() {
         return false;
     }
 }
-async function init(width = 200, height = 300) {
+async function init(width = 1000, height = 500) {
     const imageList = await loadImages();
 
     let id = sessionStorage.getItem("id");
@@ -23,11 +23,21 @@ async function init(width = 200, height = 300) {
     let imageUrl = imageList[id].download_url;
     //regex that matches "3840/2160" in ""https://picsum.photos/id/104/3840/2160"
     const regex = /\d{3,4}\/\d{3,4}/; // TODO:
-
+// if radio button is checked, add ?grayscale to the url
     imageUrl = imageUrl.replace(regex, `${width}//${height}`);
     console.log(imageUrl);
     document.querySelector("#image").src = imageUrl;
+
+    document.querySelector("#grayscale").addEventListener("click", function() {
+        if (document.querySelector("#grayscale").checked) {
+            imageUrl = imageUrl + "?grayscale";
+        }
+    });
+    console.log(imageUrl);
+    
 }
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -59,7 +69,4 @@ document.querySelector("#height").addEventListener("input", function() {
     init(newWidth, newHeight);
 });
 
-console.log(newHeight);
-console.log(imageHeight);
- 
-
+console.log(imageUrl);
