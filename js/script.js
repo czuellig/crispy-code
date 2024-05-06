@@ -12,6 +12,7 @@ function reloadImage(newWidth, newHeight) {
     let imageURL = document.querySelector("#image").src;
     imageURL = replaceSize(imageURL, newWidth, newHeight);
     document.querySelector("#image").src = imageURL;
+    document.querySelector("#download").href =  imageURL;
 }
 
 function checkSize(width, height) {
@@ -19,7 +20,7 @@ function checkSize(width, height) {
         width = 100;
     }
 
-    if (width > 1000){
+    if (width > 1200){
         width = 1000;
     }
 
@@ -63,6 +64,7 @@ async function init() {
 // if radio button is checked, add ?grayscale to the url
     console.log(imageUrl);
     document.querySelector("#image").src = imageUrl;
+    document.querySelector("#download").href =  imageUrl;
 }
 
 
@@ -109,10 +111,12 @@ document.querySelector("#grayscale").addEventListener("click", function() {
     let imageURL = document.querySelector("#image").src;
     if (document.querySelector("#grayscale").checked) {
         imageURL = imageURL + "?grayscale";
-        document.querySelector("#image").src = imageURL;      
+        reloadImage();     
     }
     else {
         imageURL = imageURL.replace("?grayscale", "");
-        document.querySelector("#image").src = imageURL;
+        reloadImage();
     }
 });
+
+
