@@ -19,8 +19,8 @@ function checkSize(width, height) {
         width = 100;
     }
 
-    if (width > 1200){
-        width = 1200;
+    if (width > 1000){
+        width = 1000;
     }
 
     if (height < 100) {

@@ -1,7 +1,6 @@
 body {
     margin: 0 auto;
     background-color: black;
-    width: 80%;
     color: white;
     text-align: center;
 }
@@ -26,12 +25,13 @@ main   {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 20px;
 }
 
 #rahmen {
     border: 3px solid white;
     padding: 10px;
-    width: 1200px;
+    width: 1000px;
     height: 800px;
     align-content: center;
     background-color: white;
