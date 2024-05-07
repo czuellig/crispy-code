@@ -1,8 +1,10 @@
-
+// ------------------------------------------------------------ Variables
 
 let url = "https://picsum.photos/v2/list?limit=100";
+let imageWidth =document.querySelector("#width").value;
+let imageHeight =document.querySelector("#height").value;
 
-// Helper functions
+// ------------------------------------------------------------ Helper functions
 function replaceSize(string, width = 1000, height = 500) {
     const regex = /(?<=\/\d*\/)\d*\/\d*/g;
     return string.replace(regex, `${width}/${height}`);
@@ -40,11 +42,8 @@ function checkSize(width, height) {
     return [width, height];
 }
 
+// ------------------------------------------------------------ Fetch images from the API
 
-
-
-
-// Fetch images from the API
 async function loadImages() {
     try {
         const response = await fetch(url);
@@ -54,6 +53,7 @@ async function loadImages() {
         return false;
     }
 }
+
 async function init() {
     const imageList = await loadImages();
 
@@ -69,25 +69,19 @@ async function init() {
     document.querySelector("#download").href = imageUrl;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
     init();
 });
 
-
-let imageWidth =document.querySelector("#width").value;
-let imageHeight =document.querySelector("#height").value;
-
-
-
-// Neues Bild wird geladen (SessionStorage wird gelöscht)
+// ------------------------------------------------------------ Neues Bild wird geladen (SessionStorage wird gelöscht)
 
 document.querySelector("#refresh").addEventListener("click", function() {
     sessionStorage.clear();
     init();
     document.querySelector("#grayscale").checked = false;
 });
+
+// ------------------------------------------------------------ Grösse des Bildes wird angepasst
 
 document.querySelector("#width").addEventListener("input", function() {
     let newWidth = document.querySelector("#width").value;
@@ -107,45 +101,49 @@ document.querySelector("#height").addEventListener("input", function() {
     
 });
 
+// ------------------------------------------------------------ Graustufe des Bildes wird angepasst
 
 document.querySelector("#grayscale").addEventListener("click", function() {
     let imageURL = document.querySelector("#image").src;
-    if (document.querySelector("#grayscale").checked) {
-        imageURL = imageURL + "?grayscale";
-        reloadImage(imageURL)
+    let paramGray;
+    if (document.querySelector("#range_blur").value > 0) {
+        paramGray = "&";
+    } else {
+        paramGray = "?";
     }
-    else {
-        imageURL = imageURL.replace("?grayscale", "");
-        reloadImage(imageURL)
-        
+    if (document.querySelector("#grayscale").checked && !imageURL.includes("grayscale")) {
+        imageURL = imageURL + paramGray + "grayscale";
+        reloadImage(imageURL);
+     } else {
+        imageURL = imageURL.replace(paramGray + "grayscale", "");
+        reloadImage(imageURL);
     }
 });
+
+// ------------------------------------------------------------ Blur des Bildes wird angepasst
 
 document.querySelector("#range_blur").addEventListener("input", function() {
     let blurValue = document.querySelector("#range_blur").value;
     let imageURL = document.querySelector("#image").src;
-    console.log(blurValue);
 
     if (blurValue == 0) {
         imageURL = imageURL.replace(/[&?]blur=\d+/, "");
+        if (imageURL.includes("&")) {
+            imageURL = imageURL.replace("&", "?");
+        }
         reloadImage(imageURL);
-        console.log(imageURL);
         return;
     }
-
     let param;
     let imageURLBlur;
     if (document.querySelector("#grayscale").checked) {
         param = "&";
     } else {
         param = "?";
-    }
-    if (imageURL.includes("blur=")) {
+    } if (imageURL.includes("blur=")) {
         imageURLBlur = imageURL.replace(/blur=\d+/, `blur=${blurValue}`);
     } else {
         imageURLBlur = imageURL + param + "blur=" + blurValue;
     }
     reloadImage(imageURLBlur);
- 
-   
 });
