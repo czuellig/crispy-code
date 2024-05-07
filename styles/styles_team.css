@@ -1,0 +1,70 @@
+body {
+    margin: 0 auto;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 85%;
+}
+
+*{
+    font-family: logic-monospace, mono;
+    color: white;
+}
+
+h1 {
+    font-size: 2em;
+    font-style: bold, normal;
+    text-align: left;
+    line-height: 80%
+}
+
+img {
+    width: 30%;
+    height: auto;
+    image-orientation: left;
+}
+
+h2 {
+    font-size: 1em;
+    text-align: left;
+    font-weight: 100;
+}
+
+h3 {
+    font-size: 1.5em;
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+
+#team {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member {
+    flex: 0 1 48%;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    #team {
+        flex-direction: column;
+    }
+
+    .member {
+        flex: 1 0 auto;
+        margin-bottom: 20px;
+    }
+}

@@ -60,9 +60,13 @@ main   {
 footer {
     color: white;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     position: fixed;
     bottom: 0;
     position: relative;
     margin-top: 80px;
+}
+
+footer a {
+    color: white;
 }
