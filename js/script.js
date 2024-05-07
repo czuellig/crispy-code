@@ -8,11 +8,16 @@ function replaceSize(string, width = 1000, height = 500) {
     return string.replace(regex, `${width}/${height}`);
 }
 
-function reloadImage(newWidth, newHeight) {
+function reloadImageSize(newWidth, newHeight) {
     let imageURL = document.querySelector("#image").src;
     imageURL = replaceSize(imageURL, newWidth, newHeight);
     document.querySelector("#image").src = imageURL;
-    document.querySelector("#download").href =  imageURL;
+    document.querySelector("#download").href = imageURL;
+}
+
+function reloadImage(imageURL) {
+    document.querySelector("#image").src = imageURL;
+    document.querySelector("#download").href = imageURL;
 }
 
 function checkSize(width, height) {
@@ -59,12 +64,9 @@ async function init() {
         id = randomNumber;
     }
     let imageUrl = imageList[id].download_url;
-    //regex that matches "3840/2160" in ""https://picsum.photos/id/104/3840/2160"
     imageUrl = replaceSize(imageUrl);
-// if radio button is checked, add ?grayscale to the url
-    console.log(imageUrl);
     document.querySelector("#image").src = imageUrl;
-    document.querySelector("#download").href =  imageUrl;
+    document.querySelector("#download").href = imageUrl;
 }
 
 
@@ -79,7 +81,7 @@ let imageHeight =document.querySelector("#height").value;
 
 
 
-// Neues Bild wird geladen (refresh der Seite)
+// Neues Bild wird geladen (SessionStorage wird gelöscht)
 
 document.querySelector("#refresh").addEventListener("click", function() {
     sessionStorage.clear();
@@ -88,12 +90,11 @@ document.querySelector("#refresh").addEventListener("click", function() {
 });
 
 document.querySelector("#width").addEventListener("input", function() {
-    console.log("input");
     let newWidth = document.querySelector("#width").value;
     let newHeight = document.querySelector("#height").value;
     newWidth = checkSize(newWidth, newHeight)[0];
     newHeight = checkSize(newWidth, newHeight)[1];
-    reloadImage(newWidth, newHeight);
+    reloadImageSize(newWidth, newHeight);
 });
 
 document.querySelector("#height").addEventListener("input", function() {
@@ -101,7 +102,7 @@ document.querySelector("#height").addEventListener("input", function() {
     let newHeight = document.querySelector("#height").value;
     newWidth = checkSize(newWidth, newHeight)[0];
     newHeight = checkSize(newWidth, newHeight)[1];
-    reloadImage(newWidth, newHeight);
+    reloadImageSize(newWidth, newHeight);
     
     
 });
@@ -111,12 +112,40 @@ document.querySelector("#grayscale").addEventListener("click", function() {
     let imageURL = document.querySelector("#image").src;
     if (document.querySelector("#grayscale").checked) {
         imageURL = imageURL + "?grayscale";
-        reloadImage();     
+        reloadImage(imageURL)
     }
     else {
         imageURL = imageURL.replace("?grayscale", "");
-        reloadImage();
+        reloadImage(imageURL)
+        
     }
 });
 
+document.querySelector("#range_blur").addEventListener("input", function() {
+    let blurValue = document.querySelector("#range_blur").value;
+    let imageURL = document.querySelector("#image").src;
+    console.log(blurValue);
 
+    if (blurValue == 0) {
+        imageURL = imageURL.replace(/[&?]blur=\d+/, "");
+        reloadImage(imageURL);
+        console.log(imageURL);
+        return;
+    }
+
+    let param;
+    let imageURLBlur;
+    if (document.querySelector("#grayscale").checked) {
+        param = "&";
+    } else {
+        param = "?";
+    }
+    if (imageURL.includes("blur=")) {
+        imageURLBlur = imageURL.replace(/blur=\d+/, `blur=${blurValue}`);
+    } else {
+        imageURLBlur = imageURL + param + "blur=" + blurValue;
+    }
+    reloadImage(imageURLBlur);
+ 
+   
+});

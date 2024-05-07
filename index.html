@@ -6,6 +6,7 @@
     <title>Fun Website</title>
     <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/animations.css" />
   </head>
   <body>
     <header>
@@ -52,14 +53,13 @@
         <div>Graustufe: <input id="grayscale" type="checkbox" /></div>
         <div><button id="refresh">Neues Bild!</button></div>
       </div>
-      <div><button id="download-btn">Download</button></div>
+      <div><a id="download" target="_blank" class="button" href="" download="dein bild">Download</a></div>
     </main>
       </section>
-      <a id="download" href="path_to_file" download="dein bild">Download</a>
     <section id="desciption"></section>
     <script src="js/script.js"></script>
     <footer>
-      <hr style="width: 1000px; border: 1px solid white" />
+      <hr style="width: 100%; border: 1px solid white" />
       <p>&copy; 2024 by livi & cedi</p>
     </footer>
   </body>
