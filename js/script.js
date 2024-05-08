@@ -26,15 +26,12 @@ function checkSize(width, height) {
     if (width < 100) {
         width = 100;
     }
-
-    if (width > 1200){
+     if (width > 1200){
         width = 1000;
     }
-
-    if (height < 100) {
+     if (height < 100) {
         height = 100;
     }
-
     if (height > 800) {
         height = 800;
     }
@@ -65,20 +62,11 @@ async function init() {
     }
     let imageUrl = imageList[id].download_url;
     imageUrl = replaceSize(imageUrl);
-    document.querySelector("#image").src = imageUrl;
-    document.querySelector("#download").href = imageUrl;
+    reloadImage(imageUrl);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     init();
-});
-
-// ------------------------------------------------------------ Neues Bild wird geladen (SessionStorage wird gelöscht)
-
-document.querySelector("#refresh").addEventListener("click", function() {
-    sessionStorage.clear();
-    init();
-    document.querySelector("#grayscale").checked = false;
 });
 
 // ------------------------------------------------------------ Grösse des Bildes wird angepasst
@@ -91,33 +79,14 @@ document.querySelector("#width").addEventListener("input", function() {
     reloadImageSize(newWidth, newHeight);
 });
 
+
+
 document.querySelector("#height").addEventListener("input", function() {
     let newWidth = document.querySelector("#width").value;
     let newHeight = document.querySelector("#height").value;
     newWidth = checkSize(newWidth, newHeight)[0];
     newHeight = checkSize(newWidth, newHeight)[1];
     reloadImageSize(newWidth, newHeight);
-    
-    
-});
-
-// ------------------------------------------------------------ Graustufe des Bildes wird angepasst
-
-document.querySelector("#grayscale").addEventListener("click", function() {
-    let imageURL = document.querySelector("#image").src;
-    let paramGray;
-    if (document.querySelector("#range_blur").value > 0) {
-        paramGray = "&";
-    } else {
-        paramGray = "?";
-    }
-    if (document.querySelector("#grayscale").checked && !imageURL.includes("grayscale")) {
-        imageURL = imageURL + paramGray + "grayscale";
-        reloadImage(imageURL);
-     } else {
-        imageURL = imageURL.replace(paramGray + "grayscale", "");
-        reloadImage(imageURL);
-    }
 });
 
 // ------------------------------------------------------------ Blur des Bildes wird angepasst
@@ -146,4 +115,33 @@ document.querySelector("#range_blur").addEventListener("input", function() {
         imageURLBlur = imageURL + param + "blur=" + blurValue;
     }
     reloadImage(imageURLBlur);
+});
+
+// ------------------------------------------------------------ Graustufe des Bildes wird angepasst
+
+document.querySelector("#grayscale").addEventListener("click", function() {
+    let imageURL = document.querySelector("#image").src;
+    let paramGray;
+    if (document.querySelector("#range_blur").value > 0) {
+        paramGray = "&";
+    } else {
+        paramGray = "?";
+    } if (document.querySelector("#grayscale").checked && !imageURL.includes("grayscale")) {
+        imageURL = imageURL + paramGray + "grayscale";
+        reloadImage(imageURL);
+     } else {
+        imageURL = imageURL.replace(paramGray + "grayscale", "");
+        reloadImage(imageURL);
+    } 
+});
+
+// ------------------------------------------------------------ Neues Bild wird geladen (SessionStorage wird gelöscht)
+
+document.querySelector("#refresh").addEventListener("click", function() {
+    sessionStorage.clear();
+    init();
+    document.querySelector("#grayscale").checked = false;
+    document.querySelector("#range_blur").value = 0;
+    document.querySelector("#width").value = 1000;
+    document.querySelector("#height").value = 500;
 });
