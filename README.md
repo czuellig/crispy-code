@@ -14,6 +14,7 @@ Wir wollten diesen Zweck erweitern. Dafür haben wir mehrere Funktionen innerhal
 
 - Was ist eine API?
 - API abrufen und mit Javascript in einer Website integrieren
+- ChatGPT ist nicht zu unterschätzen!
 
 ## Schwierigkeiten
 

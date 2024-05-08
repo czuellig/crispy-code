@@ -121,18 +121,34 @@ document.querySelector("#range_blur").addEventListener("input", function() {
 
 document.querySelector("#grayscale").addEventListener("click", function() {
     let imageURL = document.querySelector("#image").src;
-    let paramGray;
-    if (document.querySelector("#range_blur").value > 0) {
-        paramGray = "&";
+    let blurValue = document.querySelector("#range_blur").value;
+
+    // Wenn die Graustufen-Checkbox aktiviert ist
+    if (document.querySelector("#grayscale").checked) {
+        // Wenn der Blur-Effekt nicht aktiviert ist oder der Blur-Effekt aktiviert ist und der Wert 0 ist
+        if (blurValue == 0) {
+            // Füge den Graustufen-Parameter hinzu
+            imageURL += (imageURL.includes("?") ? "&" : "?") + "grayscale";
+        } else {
+            // Behalte den Blur-Effekt bei und füge den Graustufen-Parameter hinzu
+            imageURL = imageURL.replace(/[&?]blur=\d+/g, ""); // Entferne vorhandenen Blur-Parameter
+            imageURL += (imageURL.includes("?") ? "&" : "?") + `blur=${blurValue}`; // Füge Blur-Parameter hinzu
+            imageURL += "&grayscale"; // Füge Graustufen-Parameter hinzu
+        }
     } else {
-        paramGray = "?";
-    } if (document.querySelector("#grayscale").checked && !imageURL.includes("grayscale")) {
-        imageURL = imageURL + paramGray + "grayscale";
-        reloadImage(imageURL);
-     } else {
-        imageURL = imageURL.replace(paramGray + "grayscale", "");
-        reloadImage(imageURL);
-    } 
+        // Wenn die Graustufen-Checkbox nicht aktiviert ist
+        // Entferne den Graustufen-Parameter aus der URL
+        imageURL = imageURL.replace(/[&?]grayscale/g, "");
+
+        // Wenn der Blur-Effekt aktiviert ist und die Graustufen-Checkbox deaktiviert ist
+        if (blurValue > 0) {
+            // Wenn ein & im URL existiert, ersetze es durch ?
+            imageURL = imageURL.replace("&", "?");
+        }
+    }
+
+    // Lade das Bild neu
+    reloadImage(imageURL);
 });
 
 // ------------------------------------------------------------ Neues Bild wird geladen (SessionStorage wird gelöscht)
