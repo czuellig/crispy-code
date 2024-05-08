@@ -1,13 +1,20 @@
 body {
     margin: 0 auto;
+    transition: background-color 0.5s ease, color 0.5s ease;
     background-color: black;
     color: white;
     text-align: center;
     width: 85%;
 }
 
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
 *{
     font-family: logic-monospace, mono;
+    color: white;
 }
 
 h1 {
@@ -18,7 +25,22 @@ h1 {
 }
 
 h2 {
+    font-size: 1em;
+    text-align: left;
+    font-weight: 100;
+}
+
+h3 {
     font-size: 1.5em;
+    text-align: left;
+}
+
+ul {
+    text-align: left;
+}
+
+p {
+    text-align: left;
 }
 
 main   {
@@ -29,7 +51,7 @@ main   {
 }
 
 #rahmen {
-    border: 3px solid white;
+    /* border: 3px solid white; */
     width: 1200px;
     height: 800px;
     align-content: center;
@@ -37,10 +59,16 @@ main   {
 }
 
 #controls {
-    border: 3px solid white;
+    border: 3px;
+    border-style: solid;
+    border-color: white;
     padding: 10px;
     text-align: left;
     margin-bottom: 5px;
+}
+
+.light-mode #controls {
+    border-color: black;
 }
 
 #download {
@@ -71,6 +99,33 @@ main   {
     transition-timing-function: ease-out;
 }
 
+  #footerBorder {
+    border: 1px;
+    border-style: solid;
+    border-color: white;
+    width: 100%;
+  }
+
+  .profil_blid {
+    width: 30%;
+    height: auto;
+    image-orientation: left;
+}
+
+#team {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member {
+    flex: 0 1 48%;
+}
+
+.member img {
+    width: 100%;
+    height: auto;
+}
+
 footer {
     color: white;
     margin: 0 auto;
@@ -81,10 +136,15 @@ footer {
     margin-top: 80px;
 }
 
-footer a {
+footer a{
     color: white;
 }
 
+#copyIcon {
+    color: white;
+}
+
+/* ------------------------------------- Media queries */
 @media (max-width: 1200px) {
     body {
         background-color: orange;
@@ -95,12 +155,19 @@ footer a {
     body {
         background-color: red;
     }
-    
 }
 
 @media (max-width: 768px){
     body {
         background-color: lightsalmon;
+        #team {
+            flex-direction: column;
+        }
+    
+        .member {
+            flex: 1 0 auto;
+            margin-bottom: 20px;
+        }
     }
     
 }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/animations.css" />
   </head>
-  <body>
+  <body class="home">
     <header>
       <h1>Bilder<br />Platzhalter<br />Generator</h1>
     </header>
@@ -55,13 +55,18 @@
       </div>
       <div><a id="download" target="_blank" class="button" href="" download="dein bild">Download</a></div>
       <div><a id="copy" class="button" >copy url to clipboard</a></div>
+      <div class="darkmode_toggle">
+            <label class="toggle-label" for="modeToggle">Dark Mode:</label>
+              <input type="checkbox" id="modeToggle" class="toggle-input" checked>
+       </div>
     </main>
       </section>
-    <section id="desciption"></section>
-    <script src="js/script.js"></script>
     <footer>
-      <hr style="width: 100%; border: 1px solid white" />
-      <p>&copy; <a href="team.html">2024 by livi & cedi</a></p>
+      <hr id="footerBorder"/>
+      <p id="copyIcon">&copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a></p>
     </footer>
+    <script src="js/script.js"></script>
+    <script src="js/colorMode.js"></script>
   </body>
+  
 </html>

@@ -1,3 +1,4 @@
+
 body {
     margin: 0 auto;
     background-color: black;
@@ -18,7 +19,7 @@ h1 {
     line-height: 80%
 }
 
-img {
+.profil_blid {
     width: 30%;
     height: auto;
     image-orientation: left;

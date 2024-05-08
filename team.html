@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Das Team crispy-code</title>
-    <link rel="stylesheet" href="styles/styles_team.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css" />
 </head>
 <body>
@@ -15,7 +15,7 @@
     <main>
         <section id="team">
             <div class="member">
-                <img src="images/cédric.JPG" alt="Cédric" />
+                <img class="profil_blid" src="images/cédric.JPG" alt="Cédric" />
                 <h3>Cédric Züllig</h3>
                 <p>Der Drummer von Hecht ist sein Homie</p>
                     <ul>
@@ -24,7 +24,7 @@
                     </ul>
             </div>
             <div class="member">
-                <img src="images/livia.JPG" alt="Livia" />
+                <img class="profil_blid" src="images/livia.JPG" alt="Livia" />
                 <h3>Livia Vogt</h3>
                 <p>Läuft mit Migiletten in den Coop pronto</p>
                     <ul>
@@ -35,9 +35,16 @@
                     </ul>
             </div>
         </section>
+        
+    </main>
+        <div class="darkmode_toggle">
+            <label class="toggle-label" for="modeToggle">Dark Mode:</label>
+             <input type="checkbox" id="modeToggle" class="toggle-input" checked>
+        </div>
         <footer>
-            <hr style="width: 100%; border: 1px solid white" />
-            <p>&copy; <a href="team.html">2024 by livi & cedi</a></p>
-          </footer>
+            <hr id="footerBorder"/>
+            <p id="copyIcon">&copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a></p>
+          <script src="js/colorMode.js"></script>
 </body>
+
 </html>
