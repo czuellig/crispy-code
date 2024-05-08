@@ -147,8 +147,6 @@ document.querySelector("#grayscale").addEventListener("click", function() {
             imageURL = imageURL.replace("&", "?");
         }
     }
-
-    // Lade das Bild neu
     reloadImage(imageURL);
 });
 
@@ -176,28 +174,6 @@ document.querySelector("#copy").addEventListener("click", function() {
 document.addEventListener('DOMContentLoaded', function() {
     console.log("hello");
     toggleColorMode();
-    
-
-
-
-    // document.body.classList.add('dark-mode');
-
-    // modeToggle.addEventListener('change', function() {
-    //   if (modeToggle.checked) {
-    //     document.body.classList.add('dark-mode');
-    //     // Dark Mode
-    //     document.querySelector("#teamLink").style.color = '#ffffff';
-    //     document.querySelector("#footerBorder").style.borderColor = '#ffffff';
-    //     document.querySelector("#copyIcon").style.color = '#ffffff';
-    
-    //   } else {
-    //     document.body.classList.remove('dark-mode');
-    //     // Light Mode
-    //     document.querySelector("#teamLink").style.color = '#000000';
-    //     document.querySelector("#footerBorder").style.borderColor = '#000000';
-    //     document.querySelector("#copyIcon").style.color = '#000000';
-    //   }
-    // });
   });
 
   function toggleColorMode() {
@@ -212,7 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
       modeToggle.checked = false;
     }
 
-
     modeToggle.addEventListener('change', function() {
         localStorage.setItem('color-mode', modeToggle.checked ? 'dark' : 'light');
         let colorMode = localStorage.getItem('color-mode');
@@ -223,7 +198,4 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.remove('light-mode');
       }
     });
-    // const currentMode = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-    // document.body.classList.toggle('light-mode');
-    // localStorage.setItem('color-mode', currentMode);
   }

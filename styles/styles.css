@@ -14,7 +14,6 @@ body.light-mode {
 
 *{
     font-family: logic-monospace, mono;
-    color: white;
 }
 
 h1 {
@@ -43,6 +42,23 @@ p {
     text-align: left;
 }
 
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 50px;
+    width: 50px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    cursor: pointer;    
+}
+
+input[type="checkbox"]:checked {
+    font-size: 20px;
+    color: white;
+    background-color: gray;
+   
+}
+
 main   {
     display: flex;
     flex-direction: row-reverse;
@@ -67,9 +83,27 @@ main   {
     margin-bottom: 5px;
 }
 
-.light-mode #controls {
+.light-mode #controls{
+    border-color: black;
+    color: black;
+}
+
+.light-mode #rahmen {
     border-color: black;
 }
+
+.light-mode #teamLink {
+    color: black;
+} 
+
+.light-mode #footerBorder {
+   border-color: black;
+}
+
+.light-mode #copyIcon {
+    color: black;
+}
+
 
 #download {
     background-color: gray;
@@ -124,6 +158,11 @@ main   {
 .member img {
     width: 100%;
     height: auto;
+}
+
+#darkmode_toggle {
+    position: absolute;
+    bottom: 0;
 }
 
 footer {
