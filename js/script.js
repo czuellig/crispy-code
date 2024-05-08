@@ -161,3 +161,11 @@ document.querySelector("#refresh").addEventListener("click", function() {
     document.querySelector("#width").value = 1000;
     document.querySelector("#height").value = 500;
 });
+
+// ------------------------------------------------------------ Image Url wird kopiert
+
+document.querySelector("#copy").addEventListener("click", function() {
+    let imageURL = document.querySelector("#image").src;
+    navigator.clipboard.writeText(imageURL);
+    console.log("Copied to clipboard");
+});
