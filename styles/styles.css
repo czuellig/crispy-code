@@ -70,3 +70,34 @@ footer {
 footer a {
     color: white;
 }
+
+@media (max-width: 1200px) {
+    body {
+        background-color: orange;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        background-color: red;
+    }
+    
+}
+
+@media (max-width: 768px){
+    body {
+        background-color: lightsalmon;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    body {
+        background-color: yellowgreen;
+    }
+}
+
+
+
+
+
