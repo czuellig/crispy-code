@@ -18,10 +18,10 @@ body.light-mode {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 3em;
     font-style: bold, normal;
     text-align: left;
-    line-height: 80%
+    line-height: 100%
 }
 
 h2 {
