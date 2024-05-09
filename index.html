@@ -21,22 +21,27 @@
         <section id="leftside">
           <div id="container_controls">
             <div id="controls">
-              <div>
-                Breite:<input class="inputfiled" id="width" type="number" value="1000" min="100" max="5000">
-              </div>
-              <div>
-                Höhe:<input class="inputfiled" id="height" type="number" value="500" min="100" max="34">
-              </div>
-              <div>
-                Blur:<input id="range_blur" value="0" type="range" min="0" max="10" step="1">
-              </div>
-              <div>Graustufe: <input id="grayscale" type="checkbox"></div>
-              <div><button id="refresh">Neues Bild!</button></div>
+            
+              <label for="width">Breite:</label>
+              <input class="inputfiled" id="width" type="number" value="1000" min="100" max="5000">
+              
+              <label for="height">Höhe:</label>
+              <input class="inputfiled" id="height" type="number" value="500" min="100" max="34">
+              
+              <label for="range_blur">Blur:</label>
+              <input id="range_blur" value="0" type="range" min="0" max="10" step="1">
+              
+              <input id="grayscale" type="checkbox">
+              <label for="grayscale">Graustufe</label>
+
+              <button id="refresh">Neues Bild!</button>
             </div>
             <div>
               <a id="download" target="_blank" class="button" href="" download="dein bild">Download</a>
             </div>
-            <div><a id="copy" class="button">copy url to clipboard</a></div>
+              <div>
+                <a id="copy" class="button">copy url to clipboard</a>
+              </div>
           </div>
         </section>
     </main>
