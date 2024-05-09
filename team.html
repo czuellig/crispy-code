@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Das Team crispy-code</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <h1>Das ist <br>crispy-code</h1>
-        <h2> Zurück zur <a href="index.html">Homepage</a></h2>
+      <h1>Das ist <br />crispy-code</h1>
+      <h2>Zurück zur <a href="index.html">Homepage</a></h2>
     </header>
     <main>
-        <section id="team">
-            <div class="member">
-                <img class="profil_blid" src="images/cédric.JPG" alt="Cédric" />
-                <h3>Cédric Züllig</h3>
-                <p>Der Drummer von Hecht ist sein Homie</p>
-                    <ul>
-                        <li>Umsetzung main page</li>
-                        <li>Analyse der API</li>
-                    </ul>
-            </div>
-            <div class="member">
-                <img class="profil_blid" src="images/livia.JPG" alt="Livia" />
-                <h3>Livia Vogt</h3>
-                <p>Läuft mit Migiletten in den Coop pronto</p>
-                    <ul>
-                        <li>Design in Figma</li>
-                        <li>Erstellung Team page</li>
-                        <li>Unterstützung main page</li>
-                        <li>Schreiben der Dokumentation</li>
-                    </ul>
-            </div>
-        </section>
-        
-    </main>
-        <div class="darkmode_toggle">
-            <label class="toggle-label" for="modeToggle">Dark Mode:</label>
-             <input type="checkbox" id="modeToggle" class="toggle-input" checked>
+      <section id="team">
+        <div class="member">
+          <img class="profil_blid" src="images/cédric.JPG" alt="Cédric" />
+          <h3>Cédric Züllig</h3>
+          <p>Der Drummer von Hecht ist sein Homie</p>
+          <ul>
+            <li>Umsetzung main page</li>
+            <li>Analyse der API</li>
+          </ul>
         </div>
-        <footer>
-            <hr id="footerBorder"/>
-            <p id="copyIcon">&copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a></p>
-          <script src="js/colorMode.js"></script>
-</body>
-
+        <div class="member">
+          <img class="profil_blid" src="images/livia.JPG" alt="Livia" />
+          <h3>Livia Vogt</h3>
+          <p>Läuft mit Migiletten in den Coop pronto</p>
+          <ul>
+            <li>Design in Figma</li>
+            <li>Erstellung Team page</li>
+            <li>Unterstützung main page</li>
+            <li>Schreiben der Dokumentation</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <hr id="footerBorder" />
+      <div id="footer-container">
+        <div>
+          <p id="copyIcon">
+            &copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a>
+          </p>
+        </div>
+        <div class="darkmode_toggle">
+          <label id="toggle-text" class="toggle-label" for="modeToggle"
+            >Dark Mode:</label
+          >
+          <input type="checkbox" id="modeToggle" class="toggle-input" checked />
+        </div>
+      </div>
+    </footer>
+    <script src="js/colorMode.js"></script>
+  </body>
 </html>

@@ -42,28 +42,14 @@ p {
     text-align: left;
 }
 
-input[type="checkbox"] {
-    appearance: none;
-    -webkit-appearance: none;
-    height: 50px;
-    width: 50px;
-    background-color: gainsboro;
-    border-radius: 5px;
-    cursor: pointer;    
-}
 
-input[type="checkbox"]:checked {
-    font-size: 20px;
-    color: white;
-    background-color: gray;
-   
-}
 
 main   {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 #rahmen {
@@ -75,6 +61,7 @@ main   {
 }
 
 #controls {
+    margin-top: 300px;
     border: 3px;
     border-style: solid;
     border-color: white;
@@ -101,6 +88,10 @@ main   {
 }
 
 .light-mode #copyIcon {
+    color: black;
+}
+
+.light-mode #toggle-text {
     color: black;
 }
 
@@ -140,6 +131,13 @@ main   {
     width: 100%;
   }
 
+  #leftside {
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .profil_blid {
     width: 30%;
     height: auto;
@@ -161,18 +159,27 @@ main   {
 }
 
 #darkmode_toggle {
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    text-align: right;
 }
 
 footer {
     color: white;
-    margin: 0 auto;
+    margin-top: 0px;
     text-align: left;
     position: fixed;
     bottom: 0;
     position: relative;
-    margin-top: 80px;
+}
+
+#footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
 }
 
 footer a{

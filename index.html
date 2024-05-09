@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fun Website</title>
     <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/animations.css" />
   </head>
@@ -20,55 +23,75 @@
       </section>
       <!-- Einstellungen -->
       <section>
-        <div id="controls">
-        <div>
-          Breite:<input
-            class="inputfiled"
-            id="width"
-            type="number"
-            value="1000"
-            min="100"
-            max="1200"
-          />
-        </div>
-        <div>
-          Höhe:<input
-            class="inputfiled"
-            id="height"
-            type="number"
-            value="500"
-            min="100"
-            max="800"
-          />
-        </div>
-        <div>
-          Blur:<input
-            id="range_blur"
-            value="0"
-            type="range"
-            min="0"
-            max="10"
-            step="1"
-          />
-        </div>
-        <div>Graustufe: <input id="grayscale" type="checkbox" /></div>
-        <div><button id="refresh">Neues Bild!</button></div>
-      </div>
-      <div><a id="download" target="_blank" class="button" href="" download="dein bild">Download</a></div>
-      <div><a id="copy" class="button" >copy url to clipboard</a></div>
-    </main>
+        <section id="leftside">
+          <div id="container_controls">
+            <div id="controls">
+              <div>
+                Breite:<input
+                  class="inputfiled"
+                  id="width"
+                  type="number"
+                  value="1000"
+                  min="100"
+                  max="1200"
+                />
+              </div>
+              <div>
+                Höhe:<input
+                  class="inputfiled"
+                  id="height"
+                  type="number"
+                  value="500"
+                  min="100"
+                  max="800"
+                />
+              </div>
+              <div>
+                Blur:<input
+                  id="range_blur"
+                  value="0"
+                  type="range"
+                  min="0"
+                  max="10"
+                  step="1"
+                />
+              </div>
+              <div>Graustufe: <input id="grayscale" type="checkbox" /></div>
+              <div><button id="refresh">Neues Bild!</button></div>
+            </div>
+            <div>
+              <a
+                id="download"
+                target="_blank"
+                class="button"
+                href=""
+                download="dein bild"
+                >Download</a
+              >
+            </div>
+            <div><a id="copy" class="button">copy url to clipboard</a></div>
+          </div>
+        </section>
       </section>
-      <div class="darkmode_toggle">
-        <label class="toggle-label" for="modeToggle">Dark Mode:</label>
-          <input type="checkbox" id="modeToggle" class="toggle-input" checked>
-   </div>
-      
+    </main>
+
     <footer>
-      <hr id="footerBorder"/>
-      <p id="copyIcon">&copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a></p>
+      <hr id="footerBorder" />
+      <div id="footer-container">
+        <div>
+          <p id="copyIcon">
+            &copy; <a id="teamLink" href="team.html">2024 by livi & cedi</a>
+          </p>
+        </div>
+        <div class="darkmode_toggle">
+          <label id="toggle-text" class="toggle-label" for="modeToggle"
+            >Dark Mode:</label
+          >
+          <input type="checkbox" id="modeToggle" class="toggle-input" checked />
+        </div>
+      </div>
     </footer>
     <script src="js/script.js"></script>
     <script src="js/colorMode.js"></script>
   </body>
-  
 </html>
