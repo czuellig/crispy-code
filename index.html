@@ -1,82 +1,47 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Website</title>
-    <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="stylesheet" href="styles/animations.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/animations.css">
   </head>
   <body class="home">
     <header>
-      <h1>Bilder<br />Platzhalter<br />Generator</h1>
+      <h1>Bilder<br>Platzhalter<br>Generator</h1>
     </header>
     <main>
       <!-- Bildfläche -->
       <section id="rahmen">
-        <img src="" alt="random picture" id="image" />
+        <img src="" alt="random picture" id="image">
       </section>
       <!-- Einstellungen -->
-      <section>
         <section id="leftside">
           <div id="container_controls">
             <div id="controls">
               <div>
-                Breite:<input
-                  class="inputfiled"
-                  id="width"
-                  type="number"
-                  value="1000"
-                  min="100"
-                  max="1200"
-                />
+                Breite:<input class="inputfiled" id="width" type="number" value="1000" min="100" max="5000">
               </div>
               <div>
-                Höhe:<input
-                  class="inputfiled"
-                  id="height"
-                  type="number"
-                  value="500"
-                  min="100"
-                  max="800"
-                />
+                Höhe:<input class="inputfiled" id="height" type="number" value="500" min="100" max="34">
               </div>
               <div>
-                Blur:<input
-                  id="range_blur"
-                  value="0"
-                  type="range"
-                  min="0"
-                  max="10"
-                  step="1"
-                />
+                Blur:<input id="range_blur" value="0" type="range" min="0" max="10" step="1">
               </div>
-              <div>Graustufe: <input id="grayscale" type="checkbox" /></div>
+              <div>Graustufe: <input id="grayscale" type="checkbox"></div>
               <div><button id="refresh">Neues Bild!</button></div>
             </div>
             <div>
-              <a
-                id="download"
-                target="_blank"
-                class="button"
-                href=""
-                download="dein bild"
-                >Download</a
-              >
+              <a id="download" target="_blank" class="button" href="" download="dein bild">Download</a>
             </div>
             <div><a id="copy" class="button">copy url to clipboard</a></div>
           </div>
         </section>
-      </section>
     </main>
-
     <footer>
-      <hr id="footerBorder" />
+      <hr id="footerBorder">
       <div id="footer-container">
         <div>
           <p id="copyIcon">
@@ -84,10 +49,8 @@
           </p>
         </div>
         <div class="darkmode_toggle">
-          <label id="toggle-text" class="toggle-label" for="modeToggle"
-            >Dark Mode:</label
-          >
-          <input type="checkbox" id="modeToggle" class="toggle-input" checked />
+          <label id="toggle-text" class="toggle-label" for="modeToggle">Dark Mode:</label>
+          <input type="checkbox" id="modeToggle" class="toggle-input" checked>
         </div>
       </div>
     </footer>

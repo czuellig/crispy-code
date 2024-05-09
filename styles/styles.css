@@ -12,13 +12,12 @@ body.light-mode {
     color: black;
 }
 
-*{
+* {
     font-family: logic-monospace, mono;
 }
 
 h1 {
     font-size: 3em;
-    font-style: bold, normal;
     text-align: left;
     line-height: 100%
 }
@@ -44,20 +43,27 @@ p {
 
 
 
-main   {
+main {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 #rahmen {
-    /* border: 3px solid white; */
-    width: 1200px;
-    height: 800px;
+    border: 3px solid white;
+    max-width: 1200px;
+    height: auto;
     align-content: center;
     padding: 10px;
+    margin-left: 50px;
+}
+
+#image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 #controls {
@@ -70,7 +76,7 @@ main   {
     margin-bottom: 5px;
 }
 
-.light-mode #controls{
+.light-mode #controls {
     border-color: black;
     color: black;
 }
@@ -81,10 +87,10 @@ main   {
 
 .light-mode #teamLink {
     color: black;
-} 
+}
 
 .light-mode #footerBorder {
-   border-color: black;
+    border-color: black;
 }
 
 .light-mode #copyIcon {
@@ -124,24 +130,23 @@ main   {
     transition-timing-function: ease-out;
 }
 
-  #footerBorder {
+#footerBorder {
     border: 1px;
     border-style: solid;
     border-color: white;
     width: 100%;
-  }
+}
 
-  #leftside {
+#leftside {
     height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
+}
 
-  .profil_blid {
+.profil_blid {
     width: 30%;
     height: auto;
-    image-orientation: left;
 }
 
 #team {
@@ -161,7 +166,6 @@ main   {
 #darkmode_toggle {
     display: flex;
     justify-content: flex-end;
-    align-items: right;
     text-align: right;
 }
 
@@ -172,6 +176,7 @@ footer {
     position: fixed;
     bottom: 0;
     position: relative;
+    padding-top: 30px;
 }
 
 #footer-container {
@@ -182,7 +187,7 @@ footer {
 
 }
 
-footer a{
+footer a {
     color: white;
 }
 
@@ -191,40 +196,51 @@ footer a{
 }
 
 /* ------------------------------------- Media queries */
+
+/* Tablet */
 @media (max-width: 1200px) {
     body {
         background-color: orange;
     }
-}
 
-@media (max-width: 992px) {
-    body {
-        background-color: red;
+    main {
+        flex-direction: column;
     }
+
+    #rahmen {
+        margin-left: 0px;
+    }
+
+    #leftside {
+        height: auto;
+    }
+
+    #controls {
+        margin-top: 30px;
+        margin-bottom: 5px;
+    }
+
 }
 
-@media (max-width: 768px){
+/* Phone */
+@media (max-width: 768px) {
     body {
         background-color: lightsalmon;
-        #team {
-            flex-direction: column;
-        }
-    
-        .member {
-            flex: 1 0 auto;
-            margin-bottom: 20px;
-        }
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
     }
-    
-}
 
-@media (max-width: 576px) {
-    body {
-        background-color: yellowgreen;
+    h1 {
+        font-size: 2em;
+    }
+
+    #team {
+        flex-direction: column;
+    }
+
+    .member {
+        flex: 1 0 auto;
+        margin-bottom: 20px;
     }
 }
-
-
-
-
-
