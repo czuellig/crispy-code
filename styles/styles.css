@@ -83,6 +83,10 @@ button {
     display: block;
 }
 
+input[type="number"] {
+    width: 50px;
+}
+
 
 
 main {
@@ -295,5 +299,9 @@ footer a {
     .member {
         flex: 1 0 auto;
         margin-bottom: 20px;
+    }
+
+    .member-text {
+        margin-left: 25px;
     }
 }
