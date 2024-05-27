@@ -18,8 +18,8 @@ Wir wollten diesen Zweck erweitern. Dafür haben wir mehrere Funktionen innerhal
 
 ## Schwierigkeiten
 
-Jedes unserer Features funktioniert nach einer anderen Strategie. Bis jedes einzelne von vorne bis hinten fixiert war, hat es einige Geduld gebraucht. Das hat mehr Input gebraucht, als Anfangs angenommen.<br>
-Für jedes Bild gibt es eine individuelle URL. Sobald eine Abänderung stattfindet (z.B. grayscale), wird die URL entsprechend erweitert. Bei mehreren Einstellungen auf einem Bild wurde es kompliziert. Nachdem wir die oben genannten Herausforderungen gemeistert haben, mussten wir es also noch schaffen, die URL abzuändern, nicht nur das Bild im CSS. 
+Jedes unserer Features funktioniert nach einer anderen Strategie. Bis jedes einzelne von vorne bis hinten fixiert war, hat es einige Geduld gebraucht. Das hat mehr Input gebraucht, als anfangs angenommen.<br>
+Für jedes Bild gibt es eine individuelle URL. Sobald eine Abänderung stattfindet (z.B. grayscale), wird die URL entsprechend erweitert. Bei mehreren Einstellungen auf einem Bild wurde es kompliziert(er). Nachdem wir die oben genannten Herausforderungen gemeistert haben, mussten wir es also noch schaffen, die URL abzuändern, nicht nur das Bild im CSS. Zu beachten war zudem die spezifische Reihenfolge der Features. 
 
 ## Benutzte Ressourcen
 
