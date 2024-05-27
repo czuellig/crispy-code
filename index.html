@@ -11,6 +11,7 @@
   <body class="home">
     <header>
       <h1>Bilder<br>Platzhalter<br>Generator</h1>
+      </a>
     </header>
     <main>
       <!-- Bildfläche -->
@@ -29,9 +30,9 @@
               <input class="inputfiled" id="height" type="number" value="500" min="100" max="34">
               
               <label for="range_blur">Blur:</label>
-              <input id="range_blur" value="0" type="range" min="0" max="10" step="1">
+              <input class="range-switch" id="range_blur" value="0" type="range" min="0" max="10" step="1">
               
-              <input id="grayscale" type="checkbox">
+              <input class="checkbox-animation" id="grayscale" type="checkbox">
               <label for="grayscale">Graustufe</label>
 
               <button id="refresh">Neues Bild!</button>
@@ -55,7 +56,7 @@
         </div>
         <div class="darkmode_toggle">
           <label id="toggle-text" class="toggle-label" for="modeToggle">Dark Mode:</label>
-          <input type="checkbox" id="modeToggle" class="toggle-input" checked>
+          <input type="checkbox" id="modeToggle" class="toggle-input" checked >
         </div>
       </div>
     </footer>

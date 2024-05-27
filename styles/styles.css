@@ -19,13 +19,17 @@ body.light-mode {
 h1 {
     font-size: 3em;
     text-align: left;
-    line-height: 100%
+    line-height: 100%;
 }
 
 h2 {
     font-size: 1em;
     text-align: left;
     font-weight: 100;
+}
+
+#back-to-home {
+    color: white;
 }
 
 h3 {
@@ -46,6 +50,14 @@ label {
     margin-top: 1em;
 }
 
+#toggle-text {
+    display: inline !important;
+}
+
+#modeToggle {
+    display: inline !important;
+}
+
 
 label:first-of-type {
     margin-top: 0;
@@ -53,6 +65,12 @@ label:first-of-type {
 
 input {
     padding: 0.5em;
+    accent-color: gray;
+
+}
+
+input[type="range"] {
+    padding: 0;
 }
 
 input[type="checkbox"]+label {
@@ -127,6 +145,10 @@ main {
 }
 
 .light-mode #toggle-text {
+    color: black;
+}
+
+.light-mode #back-to-home {
     color: black;
 }
 
@@ -256,8 +278,10 @@ footer a {
     body {
         background-color: lightsalmon;
         width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
+    }
+
+    header {
+        margin-left: 25px;
     }
 
     h1 {
