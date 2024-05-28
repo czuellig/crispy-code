@@ -94,7 +94,6 @@ main {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */
 }
 
 #rahmen {
@@ -254,9 +253,6 @@ footer a {
 
 /* Tablet */
 @media (max-width: 1200px) {
-    body {
-        background-color: orange;
-    }
 
     main {
         flex-direction: column;
@@ -280,7 +276,6 @@ footer a {
 /* Phone */
 @media (max-width: 768px) {
     body {
-        background-color: lightsalmon;
         width: 100%;
     }
 

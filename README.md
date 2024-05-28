@@ -8,13 +8,12 @@ Ende Mai 2024<br>
 ## Kurzbeschreibung des Projekts
 
 Unsere API https://picsum.photos/ gibt konventionelle Bilder aus. Diese können als Placeholders benutzt werden. Welches Bild ausgespuckt wird, ist Zufall.<br>
-Wir wollten diesen Zweck erweitern. Dafür haben wir mehrere Funktionen innerhalb einer Box erstellt. Dazu gehört eine Leiste mit 10 Blur-Stufen. Zudem kann man das Bild schwarzweiss einfärben via Checkbox. Die individuelle Höhe und Breite lässt sich über zwei Input-Felder ändern. Um das Projekt abzurunden, kann der User das generierte Bild via Download-Button herunterladen. 
+Wir wollten diesen Zweck erweitern. Dafür haben wir mehrere Funktionen innerhalb einer Box erstellt. Dazu gehört eine Leiste mit 10 Blur-Stufen. Zudem kann man das Bild schwarzweiss einfärben via Checkbox (einge Bilder die uns die API liefert sind schon schwarzweiss bei diesen können wir die Graustufe nicht entfernen, leider gab es keine Möglichkeit diese Bilder herraus zu filtern). Die individuelle Höhe und Breite lässt sich über zwei Input-Felder ändern. Um das Projekt abzurunden, kann der User das generierte Bild via Download-Button herunterladen oder dir URL kopieren.
 
 ## Learnings
 
-- Was ist eine API?
-- API abrufen und mit Javascript in einer Website integrieren
-- ChatGPT ist nicht zu unterschätzen!
+Mit Hilfe dieses Projekts haben wir gelernt mit API's zu arbeit. 
+Zum Glück haben wir eine relativ Simple API ausgewählt, da wir gemerkt haben wir komplieziert nur schon das Ausswerten der Daten sein kann. Zudem haben wir uns das erste Mal mit JavaScript ausseinander gesetzt. Gerade beim programmieren mit Java Script haben wir gelernt was für eine starkes Tool ChatGPT (oder GitHub CO-Pilot) sein kann, wenn man es richtig einsetzt.
 
 ## Schwierigkeiten
 

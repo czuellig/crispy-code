@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Website</title>
+    <title>Bilder Generator</title>
     <link rel="stylesheet" href="https://use.typekit.net/ahv7wdw.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/animations.css">
@@ -11,15 +11,14 @@
   <body class="home">
     <header>
       <h1>Bilder<br>Platzhalter<br>Generator</h1>
-      </a>
     </header>
     <main>
       <!-- Bildfläche -->
-      <section id="rahmen">
-        <img src="" alt="random picture" id="image">
-      </section>
+      <div id="rahmen">
+        <img src="test.jpg" alt="random picture" id="image">
+      </div>
       <!-- Einstellungen -->
-        <section id="leftside">
+        <div id="leftside">
           <div id="container_controls">
             <div id="controls">
             
@@ -35,7 +34,7 @@
               <input class="checkbox-animation" id="grayscale" type="checkbox">
               <label for="grayscale">Graustufe</label>
 
-              <button id="refresh">Neues Bild!</button>
+              <button class="refresh-animation" id="refresh">Neues Bild!</button>
             </div>
             <div>
               <a id="download" target="_blank" class="button" href="" download="dein bild">Download</a>
@@ -44,7 +43,7 @@
                 <a id="copy" class="button">copy url to clipboard</a>
               </div>
           </div>
-        </section>
+        </div>
     </main>
     <footer>
       <hr id="footerBorder">
